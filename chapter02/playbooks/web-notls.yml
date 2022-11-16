@@ -1,7 +1,10 @@
+#!/usr/bin/ansible-playbook
 - name: Configure webserver with nginx
   hosts: webservers
   become: True
   tasks:
+    # - debug: var=hostvars[inventory_hostname] # print all variables of current host
+
     - name: install nginx
       apt: name=nginx update_cache=yes
 
